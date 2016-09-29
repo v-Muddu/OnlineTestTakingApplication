@@ -20,8 +20,8 @@
 		<servlet-class>edu.uic.controller.TakeTest</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>ViewScore</servlet-name>
-		<servlet-class>edu.uic.controller.ViewScore</servlet-class>
+		<servlet-name>ViewScores</servlet-name>
+		<servlet-class>edu.uic.controller.ViewScores</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Register</servlet-name>
@@ -36,8 +36,8 @@
 		<url-pattern>/servlet/TakeTest</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>ViewScore</servlet-name>
-		<url-pattern>/servlet/ViewScore</url-pattern>
+		<servlet-name>ViewScores</servlet-name>
+		<url-pattern>/servlet/ViewScores</url-pattern>
 	</servlet-mapping>
 
 

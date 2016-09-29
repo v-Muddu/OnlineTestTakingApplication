@@ -9,7 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class TakeTest extends HttpServlet {
+public class AddTest extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
 
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
@@ -20,8 +28,8 @@ public class TakeTest extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		try {
-			request.setAttribute("testName", request.getParameter("testName"));
-			request.getRequestDispatcher("//jsp/TakeTest.jsp").forward(request, response);
+
+			request.getRequestDispatcher("//jsp/ViewScores.jsp").forward(request, response);
 		
 
 		} catch (Exception e2) {

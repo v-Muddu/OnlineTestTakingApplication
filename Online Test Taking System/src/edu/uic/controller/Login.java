@@ -49,6 +49,8 @@ public class Login extends HttpServlet {
 //				}
 //
 //			}
+			//int role = resultset.getString("check for role posision in DB and type cast")
+			//crap
 			int range = 3;     
 			    
 			int role = (int)(Math.random() * range) + 1;
@@ -62,14 +64,14 @@ public class Login extends HttpServlet {
 				if(password.equals("Vaq"))
 					returnType=true;
 			}
+			//crap
+			
 			if (!returnType)
 				request.getRequestDispatcher("//jsp/LoginFailure.jsp").forward(request, response);
 			else if(role==1)
 				request.getRequestDispatcher("//jsp/StudentHome.jsp").forward(request, response);
 			else if(role==2)
-				request.getRequestDispatcher("//jsp/TAHome.jsp").forward(request, response);
-			else if(role==3)
-			request.getRequestDispatcher("//jsp/TeacherHome.jsp").forward(request, response);
+				request.getRequestDispatcher("//jsp/TeacherHome.jsp").forward(request, response);
 		} catch (Exception e2) {
 			System.out.println(e2);
 		}

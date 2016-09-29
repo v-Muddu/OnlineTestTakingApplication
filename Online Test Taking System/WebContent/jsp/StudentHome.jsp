@@ -15,6 +15,7 @@
 
 </head>
 <body>
+	<form >
 	<H1>
 		<br />
 			<Center>Student home</Center>
@@ -41,12 +42,12 @@ Welcome <%=request.getParameter("username")%>!!!
 						<table style="width: 100%">
 						<tr >
 							
-						<th align="right" ><input type="submit" value="TakeTest" formmethod="get" formaction="servlet/TakeTest" /></th>
+						<th align="right" ><input type="submit" value="TakeTest" formmethod="get" formaction="TakeTest" /></th>
 <th style="width: .3%"/>					
-							<th align="left"><input type="submit" value="View All Scores" formmethod="get" formaction="servlet/ViewScore" /></th>
+							<th align="left"><input type="submit" value="View All Scores" formmethod="get" formaction="ViewScores" /></th>
 						</tr>
 				</table>
-						</br>
-			
+						
+			</form>
 </body>
 </html>

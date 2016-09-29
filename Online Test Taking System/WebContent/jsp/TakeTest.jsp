@@ -22,8 +22,8 @@
 		<tr>
 			<th align="right" style="width: 50%">Question 1:</th>
 			<th style="width: 2%" />
-			<th align="left"><input type="textarea" name="username"
-				value="Question 1"></th>
+			<th align="left"><textarea name="q1" value="Question 1" readonly="readonly" style="width: 50%">Question 1</textarea></th>
+
 		</tr>
 		</br>
 		<tr>
@@ -42,8 +42,8 @@
 <tr>
 			<th align="right" style="width: 50%">Question 2:</th>
 			<th style="width: 2%" />
-			<th align="left"><input type="textarea" name="username"
-				value="Question 2"></th>
+			<th align="left"><textarea name="q2" value="Question 2" readonly="readonly" style="width: 50%">Question 2</textarea></th>
+
 		</tr>
 		</br>
 		<tr>
@@ -62,8 +62,7 @@
 <tr>
 			<th align="right" style="width: 50%">Question 3:</th>
 			<th style="width: 2%" />
-			<th align="left"><input type="textarea" name="username"
-				value="Question 3"></th>
+			<th align="left"><textarea name="q3" value="Question 3" readonly="readonly" style="width: 50%">Question 3</textarea></th>
 		</tr>
 		</br>
 		<tr>
