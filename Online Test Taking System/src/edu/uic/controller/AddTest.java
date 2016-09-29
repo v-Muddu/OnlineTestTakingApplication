@@ -29,7 +29,7 @@ public class AddTest extends HttpServlet {
 
 		try {
 
-			request.getRequestDispatcher("//jsp/ViewScores.jsp").forward(request, response);
+			request.getRequestDispatcher("//jsp/AddTest.jsp").forward(request, response);
 		
 
 		} catch (Exception e2) {

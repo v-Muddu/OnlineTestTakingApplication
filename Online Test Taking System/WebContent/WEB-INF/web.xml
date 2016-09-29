@@ -16,6 +16,13 @@
 		<servlet-class>edu.uic.controller.Login</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>AddTest</servlet-name>
+		<servlet-class>edu.uic.controller.AddTest</servlet-class>
+	</servlet><servlet>
+		<servlet-name>ViewStudents</servlet-name>
+		<servlet-class>edu.uic.controller.ViewStudents</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>TakeTest</servlet-name>
 		<servlet-class>edu.uic.controller.TakeTest</servlet-class>
 	</servlet>
@@ -39,6 +46,12 @@
 		<servlet-name>ViewScores</servlet-name>
 		<url-pattern>/servlet/ViewScores</url-pattern>
 	</servlet-mapping>
-
+	<servlet-mapping>
+		<servlet-name>AddTest</servlet-name>
+		<url-pattern>/servlet/AddTest</url-pattern>
+	</servlet-mapping>	<servlet-mapping>
+		<servlet-name>ViewStudents</servlet-name>
+		<url-pattern>/servlet/ViewStudents</url-pattern>
+	</servlet-mapping>
 
 </web-app> 

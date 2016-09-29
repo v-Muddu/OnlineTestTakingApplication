@@ -26,43 +26,41 @@
 			<br /> <br /> 
 			<br /> <br />
 			<br /> <br />
-			<br />
-			
+			<br />			
 				<table style="width: 100%">
 						<tr>
 							<th align="right" style="width: 50%">Username:</th>
 							<th style="width: 2%"/>
-							<th align="left"> <input type="text" id="username"></th>
+							<th align="left"> <input type="text" name="username"></th>
 						</tr> 
 					</br>
 						<tr>
 							<th align="right">Password: </th>
 							<th style="width: 2%"/>
-							<th align="left"><input type="password" id="password"></th>
+							<th align="left"><input type="password" name="password"></th>
 						</tr>
 					</br>
 						</table>
 						</br>
 				<table style="width: 100%">
 						<tr >
-							<th align="right" ><input type="submit" value="Register" onclick="form.action='Register';" /></th>
-							<th style="width: .3%"/>
+							<th style="width: 50%"/>
+<!-- 						<th align="right" ><input type="submit" value="Register" formmethod="get" formaction="servlet/Register" /></th>
+ -->						
 							<th align="left"><input type="submit" value="Login" /></th>
 						</tr>
-						</table><table>
+				</table>
+		<table>
 						<tr >
-							<th align="right" style="width: 50%"/><font color="red">* Please enter correct username/password to proceed</font></th>
-							<th align="left"></th>
+							<th align="right" ></th>
+							<th align="left" style="width: 50%"/><font color="red">* Please enter correct username/password to proceed</font></th>></th>
 						</tr>
 				</table>
-		
 
 		<br /> <br />
 		<br /> <br />
 		<br /> <br /> 
 		<br /> <br />
-		<hr>
-
-	</form>
+		<hr> </form>
 </body>
 </html>

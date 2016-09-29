@@ -32,40 +32,25 @@ public class Login extends HttpServlet {
 
 		String userName = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println(password);
+	
 		try {
-//			DBDao dao1 = new DBDao(dbUserNameForTestSchema, dbPasswordForTestSchema,
-//					"jdbc:mysql://131.193.209.57:3306/", testSchema, mysqlJdbcDriver);
-//			dao1.createConnection();
-//			DBService serv = new DBService(dao1);
-//			String wherClause = "username = '" + userName + "'";
-//			ResultSet resultSet = serv.fetchDataFromTable("f16g324_user", wherClause);
-//			boolean returnType = false;
-//			while (resultSet.next()) {
-//				System.out.println();
-//				if (resultSet.getString(3).equals(password)) {
-//					System.out.println(password);
-//					returnType = true;
-//				}
-//
-//			}
-			//int role = resultset.getString("check for role posision in DB and type cast")
-			//crap
-			int range = 3;     
-			    
-			int role = (int)(Math.random() * range) + 1;
-			
+			DBDao dao1 = new DBDao(dbUserNameForTestSchema, dbPasswordForTestSchema,
+					"jdbc:mysql://131.193.209.57:3306/", testSchema, mysqlJdbcDriver);
+			dao1.createConnection();
+			DBService serv = new DBService(dao1);
+			String wherClause = "username = '" + userName + "'";
+			ResultSet resultSet = serv.fetchDataFromTable("f16g324_user", wherClause);
 			boolean returnType = false;
-			if(userName.equalsIgnoreCase("Viswa")){
-				if(password.equals("V"))
-					returnType=true;
+			int role = 1;
+			while (resultSet.next()) {
+				if (resultSet.getString(3).equals(password)) {
+					role = Integer.parseInt(resultSet.getString(6));
+					returnType = true;
+				}
+
 			}
-			else 	if(userName.equalsIgnoreCase("Vi")){
-				if(password.equals("Vaq"))
-					returnType=true;
-			}
-			//crap
 			
+			dao1.closeConnection();
 			if (!returnType)
 				request.getRequestDispatcher("//jsp/LoginFailure.jsp").forward(request, response);
 			else if(role==1)
@@ -79,11 +64,5 @@ public class Login extends HttpServlet {
 		out.close();
 	}
 
-	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-		DBDao dao1 = new DBDao(dbUserNameForTestSchema, dbPasswordForTestSchema, "jdbc:mysql://131.193.209.57:3306/",
-				testSchema, mysqlJdbcDriver);
-		dao1.createConnection();
-		DBService serv = new DBService(dao1);
-		serv.fetchDataFromTable("f16g324_roles", -1, -1);
-	}
+
 }

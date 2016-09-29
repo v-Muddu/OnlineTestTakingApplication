@@ -28,8 +28,7 @@ public class ViewStudents extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		try {
-
-			request.getRequestDispatcher("//jsp/ViewScores.jsp").forward(request, response);
+			request.getRequestDispatcher("//jsp/ViewStudents.jsp").forward(request, response);
 		
 
 		} catch (Exception e2) {
