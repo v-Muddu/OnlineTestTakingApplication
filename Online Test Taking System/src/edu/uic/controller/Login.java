@@ -1,0 +1,87 @@
+package edu.uic.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import edu.uic.dao.DBDao;
+import edu.uic.dao.DBService;
+
+public class Login extends HttpServlet {
+	/**
+	 * 
+	 */
+//	private static final long serialVersionUID = 1L;
+
+	private final static String mysqlJdbcDriver = "com.mysql.jdbc.Driver";
+
+	private static String dbUserNameForTestSchema = "s16g40";
+	private static String dbPasswordForTestSchema = "s16g40FpqU5";
+	private static String testSchema = "s16g40";
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+
+		String userName = request.getParameter("username");
+		String password = request.getParameter("password");
+		System.out.println(password);
+		try {
+//			DBDao dao1 = new DBDao(dbUserNameForTestSchema, dbPasswordForTestSchema,
+//					"jdbc:mysql://131.193.209.57:3306/", testSchema, mysqlJdbcDriver);
+//			dao1.createConnection();
+//			DBService serv = new DBService(dao1);
+//			String wherClause = "username = '" + userName + "'";
+//			ResultSet resultSet = serv.fetchDataFromTable("f16g324_user", wherClause);
+//			boolean returnType = false;
+//			while (resultSet.next()) {
+//				System.out.println();
+//				if (resultSet.getString(3).equals(password)) {
+//					System.out.println(password);
+//					returnType = true;
+//				}
+//
+//			}
+			int range = 3;     
+			    
+			int role = (int)(Math.random() * range) + 1;
+			
+			boolean returnType = false;
+			if(userName.equalsIgnoreCase("Viswa")){
+				if(password.equals("V"))
+					returnType=true;
+			}
+			else 	if(userName.equalsIgnoreCase("Vi")){
+				if(password.equals("Vaq"))
+					returnType=true;
+			}
+			if (!returnType)
+				request.getRequestDispatcher("//jsp/LoginFailure.jsp").forward(request, response);
+			else if(role==1)
+				request.getRequestDispatcher("//jsp/StudentHome.jsp").forward(request, response);
+			else if(role==2)
+				request.getRequestDispatcher("//jsp/TAHome.jsp").forward(request, response);
+			else if(role==3)
+			request.getRequestDispatcher("//jsp/TeacherHome.jsp").forward(request, response);
+		} catch (Exception e2) {
+			System.out.println(e2);
+		}
+
+		out.close();
+	}
+
+	public static void main(String[] args) throws SQLException, ClassNotFoundException {
+		DBDao dao1 = new DBDao(dbUserNameForTestSchema, dbPasswordForTestSchema, "jdbc:mysql://131.193.209.57:3306/",
+				testSchema, mysqlJdbcDriver);
+		dao1.createConnection();
+		DBService serv = new DBService(dao1);
+		serv.fetchDataFromTable("f16g324_roles", -1, -1);
+	}
+}
