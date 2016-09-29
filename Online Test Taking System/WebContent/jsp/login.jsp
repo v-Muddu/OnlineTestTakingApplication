@@ -45,8 +45,8 @@
 				<table style="width: 100%">
 						<tr >
 							<th style="width: 50%"/>
-<!-- 						<th align="right" ><input type="submit" value="Register" formmethod="get" formaction="servlet/Register" /></th>
- -->						
+						<th align="right" ><input type="submit" value="Register" formmethod="get" formaction="servlet/Register" /></th>
+						
 							<th align="left"><input type="submit" value="Login" /></th>
 						</tr>
 				</table>

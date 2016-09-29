@@ -8,10 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.SortedMap;
 
-import javax.servlet.jsp.jstl.sql.Result;
-import javax.servlet.jsp.jstl.sql.ResultSupport;
 
 public class DBService {
 
@@ -20,7 +17,6 @@ public class DBService {
 	Statement statement;
 	ResultSet resultSet, rs;
 	ResultSetMetaData resultSetMetaData;
-	Result result;
 	String userName;
 
 	public DBService(DBDao dao) {
@@ -28,7 +24,7 @@ public class DBService {
 		this.userName = dao.getUserName();
 	}
 
-	public Result fetchDataFromTable(String tablename, int limit, int offset) throws SQLException {
+	public ResultSet fetchDataFromTable(String tablename, int limit, int offset) throws SQLException {
 
 		statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 		if (limit != -1 && offset != -1)
@@ -36,9 +32,8 @@ public class DBService {
 		else
 			resultSet = statement.executeQuery("select * from " + tablename);
 
-		result = ResultSupport.toResult(resultSet);
 
-		return result;
+		return resultSet;
 	}
 
 	public ResultSet fetchDataFromTable(String tablename, String wherClause) throws SQLException {
@@ -80,41 +75,13 @@ public class DBService {
 
 	public void insertTableContents(String tableName, String values) throws SQLException {
 		statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		System.out.println("INSERT INTO " + tableName + " VALUES " + values);
 		statement.executeUpdate("INSERT INTO " + tableName + " VALUES " + values);
 
 	}
 
-	public void selectAllEmpIds(String tableName) throws SQLException {
 
-		statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
-		resultSet = statement.executeQuery("select fullname,emp_id from " + tableName);
-
-		result = ResultSupport.toResult(resultSet);
-		for (int i = 0; i < result.getRowCount(); i++)
-			System.out.println(result.getRows()[i]);
-
-	}
-
-	public void updateTableContents(String tableName, String values, int emp_no) throws SQLException {
-		statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		statement.executeUpdate("Update " + tableName + " SET " + values + " WHERE emp_id = " + emp_no);
-		resultSet = statement.executeQuery("select * from " + tableName + " where emp_id =" + emp_no);
-		result = ResultSupport.toResult(resultSet);
-		for (int i = 0; i < result.getRowCount(); i++)
-			System.out.println(result.getRows()[i]);
-
-	}
-
-	public void deleteTableContents(String tableName, int emp_no) throws SQLException {
-		statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-		statement.executeUpdate("DELETE FROM " + tableName + " WHERE emp_id = " + emp_no);
-		resultSet = statement.executeQuery("select * from " + tableName + " where emp_id =" + emp_no);
-		result = ResultSupport.toResult(resultSet);
-		for (int i = 0; i < result.getRowCount(); i++)
-			System.out.println(result.getRows()[i]);
-
-	}
+	
 
 	public void listTables() throws SQLException {
 		DatabaseMetaData dbmd = connection.getMetaData();

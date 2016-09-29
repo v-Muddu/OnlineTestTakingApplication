@@ -35,11 +35,10 @@ String password = request.getParameter("password");
 String uin = request.getParameter("uin");
 String fname = request.getParameter("fname");
 String lname = request.getParameter("lname");
-String sques = request.getParameter("sques");
-String sans = request.getParameter("sans");
+String dateOfBirth = request.getParameter("date");
 
-String userQuery = " `s16g40`.`f16g324_user` (`UIN`, `username`, `password`, `firstname`, `lastname`, `role_fk`, `secretquestion`, `secretanswer`)";
-String values = "('"+uin+"', '"+username+"', '"+password+"', '"+fname+"', '"+lname+"', '"+1+"', '"+sques+"', '"+sans+"')";
+String userQuery = " `s16g40`.`f16g324_user` (`UIN`, `username`, `password`, `firstname`, `lastname`, `role_fk`, `DateOfBirth`)";
+String values = "('"+uin+"', '"+username+"', '"+password+"', '"+fname+"', '"+lname+"', '"+1+"', '"+dateOfBirth+"')";
 
 System.out.println(username);
 DBDao dao1 = new DBDao(dbUserNameForTestSchema,
