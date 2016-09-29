@@ -12,6 +12,7 @@
         line-height: 55%;
      }
 </style> 
+
 </head>
 <body>
 	<H1>
@@ -25,57 +26,26 @@ Welcome <%=request.getParameter("username")%>!!!
 						<tr>
 							<th align="right" style="width: 50%">View Available Tests:</th>
 							<th style="width: 2%"/>
-							<th align="left"> <select name="test"><option>Maths</option>
-							<option>EAD</option>
-							<option>Operation Management</option></th>
+							<th align="left"> <select name="testName" id="select">
+						
+							<option value = "Maths">Maths</option>
+							<option value="EAD">EAD</option>
+							<option value="Öperation Management">Operation Management</option>
+							</select> 
 							
+							</th>
 						</tr> 
 						
 					</br>
-						<tr>
-							<th align="right">Password: </th>
-							<th style="width: 2%"/>
-							<th align="left"><input type="password" name="password"></th>
+					</table>
+						<table style="width: 100%">
+						<tr >
+							
+						<th align="right" ><input type="submit" value="TakeTest" formmethod="get" formaction="servlet/TakeTest" /></th>
+<th style="width: .3%"/>					
+							<th align="left"><input type="submit" value="View All Scores" formmethod="get" formaction="servlet/ViewScore" /></th>
 						</tr>
-					</br>
-					<tr>
-							<th align="right">Re-type Password: </th>
-							<th style="width: 2%"/>
-							<th align="left"><input type="password" name="password1"></th>
-					</tr>
-					</br>
-					<tr>
-							<th align="right">UIN: </th>
-							<th style="width: 2%"/>
-							<th align="left"><input type="text" name="uin"></th>
-					</tr>
-					
-					</br>
-					<tr>
-							<th align="right">First Name: </th>
-							<th style="width: 2%"/>
-							<th align="left"><input type="text" name="fname"></th>
-					</tr>
-					</br>
-						<tr>
-							<th align="right">Last Name: </th>
-							<th style="width: 2%"/>
-							<th align="left"><input type="text" name="lname" ></th>
-					</tr>
-					</br>
-						<tr>
-							<th align="right">Secret Question: </th>
-							<th style="width: 2%"/>
-							<th align="left"><input type="text" name="sques" ></th>
-					</tr>
-					</br>
-						<tr>
-							<th align="right">Secret Answer: </th>
-							<th style="width: 2%"/>
-							<th align="left"><input type="text" name="sans" ></th>
-					</tr>
-					</br>
-						</table>
+				</table>
 						</br>
 			
 </body>
