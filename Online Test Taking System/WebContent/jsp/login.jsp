@@ -1,61 +1,49 @@
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
 	pageEncoding="US-ASCII"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
- <style>
-/*     table, th, td {
-	border: 1px solid black;
-}  */
-  tab1 { padding-left: 1em; }
- tab3 { padding-left: 3em; }
- br {
-        line-height: 55%;
-     }
-</style> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Homepage</title>
 </head>
+<header style="padding-bottom: 40px; text-align: center">
+	<tr>
+		<td>
+			<h1>Welcome to the online test portal</h1>
+		</td>
+		<td>
+			<div style="text-align: right" formaction="UsersGuide.jsp" formmethod="get">			 
+				<a style="padding-right: 20px" href="userguide.jsp" formaction="AboutUs.jsp" formmethod="get" onclick="parentNode.submit()">User's Guide</a>			
+				<a href="AboutUs.jsp">About Us</a>
+			</div>
+		</td>		
+	</tr>
+</header>
 <body>
-	<form action="servlet/Login" method="post">
-		<H1>
-		<br />
-			<Center>Online Test Taking System</Center>
-			
-			<hr>
-		</H1>
-		
-			<br /> <br /> 
-			<br /> <br />
-			<br /> <br />
-			<br />			
-				<table style="width: 100%">
-						<tr>
-							<th align="right" style="width: 50%">Username:</th>
-							<th style="width: 2%"/>
-							<th align="left"> <input type="text" name="username"></th>
-						</tr> 
-					</br>
-						<tr>
-							<th align="right">Password: </th>
-							<th style="width: 2%"/>
-							<th align="left"><input type="password" name="password"></th>
-						</tr>
-					</br>
-						</table>
-						</br>
-				<table style="width: 100%">
-						<tr >
-							<th style="width: 50%"/>
-						<th align="right" ><input type="submit" value="Register" formmethod="get" formaction="servlet/Register" /></th>
-						
-							<th align="left"><input type="submit" value="Login" /></th>
-						</tr>
-				</table>
-		
-
-		<br /> <br />
-		<br /> <br />
-		<br /> <br /> 
-		<br /> <br />
-		<hr> </form>
+	<form action="servlet/login" method="post">
+		<table width="1024px" align="center" opacity="0.5">			
+			<tr style="padding-top: 25px; text-align:center; padding-bottom: 25px">
+				<td>
+					<h2>Login</h2>					
+				</td>
+			</tr>
+			<tr style="text-align: center;">
+				<td>
+					Username: <input type="text" name="username" placeholder="enter your username">
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align: center; padding-left: 4px">	
+					Password: <input type="password" name="password" placeholder="enter your password">	
+				</td>
+			</tr>
+			<tr style=" text-align:center;">
+				<td style="padding-left: 37px">
+					<input type="submit" value="Login">&nbsp;&nbsp;<input type="submit" value="Sign Up">
+				</td>
+			</tr>			
+		</table>
+	</form>
 </body>
 </html>

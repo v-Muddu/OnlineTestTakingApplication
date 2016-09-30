@@ -3,6 +3,7 @@ package edu.uic.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ public class Login extends HttpServlet {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+//	private static final long serialVersionUID = 1L;
 
 	private final static String mysqlJdbcDriver = "com.mysql.jdbc.Driver";
 
@@ -28,7 +29,6 @@ public class Login extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-
 		String userName = request.getParameter("username");
 		String password = request.getParameter("password");
 	
