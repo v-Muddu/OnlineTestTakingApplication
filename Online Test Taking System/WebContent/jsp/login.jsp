@@ -15,13 +15,13 @@
 		<td>
 			<div style="text-align: right" formaction="UsersGuide.jsp" formmethod="get">			 
 				<a style="padding-right: 20px" href="userguide.jsp" formaction="AboutUs.jsp" formmethod="get" onclick="parentNode.submit()">User's Guide</a>			
-				<a href="AboutUs.jsp">About Us</a>
+				<a style="padding-right:20px" href="AboutUs.jsp">About Us</a>
 			</div>
 		</td>		
 	</tr>
 </header>
 <body>
-	<form action="servlet/login" method="post">
+	<form action="/servlet/login" method="post">
 		<table width="1024px" align="center" opacity="0.5">			
 			<tr style="padding-top: 25px; text-align:center; padding-bottom: 25px">
 				<td>
@@ -40,7 +40,8 @@
 			</tr>
 			<tr style=" text-align:center;">
 				<td style="padding-left: 37px">
-					<input type="submit" value="Login">&nbsp;&nbsp;<input type="submit" value="Sign Up">
+					<input type="submit" value="Login" formaction="/Online_Test_Taking_System/servlet/Login" formmethod="post">&nbsp;&nbsp;
+					<input type="submit" value="Sign Up">
 				</td>
 			</tr>			
 		</table>
