@@ -13,8 +13,8 @@
 			<h1>Welcome to the online test portal</h1>
 		</td>
 		<td>
-			<div style="text-align: right" formaction="UsersGuide.jsp" formmethod="get">			 
-				<a style="padding-right: 20px" href="userguide.jsp" formaction="AboutUs.jsp" formmethod="get" onclick="parentNode.submit()">User's Guide</a>			
+			<div style="text-align: right" formaction="usersguide.jsp" formmethod="get">			 
+				<a style="padding-right: 20px" href="usersguide.jsp" formaction="AboutUs.jsp" formmethod="get" onclick="parentNode.submit()">User's Guide</a>			
 				<a style="padding-right:20px" href="AboutUs.jsp">About Us</a>
 			</div>
 		</td>		

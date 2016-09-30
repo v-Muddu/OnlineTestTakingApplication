@@ -1,5 +1,6 @@
 package edu.uic.controller;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -62,6 +63,20 @@ public class Login extends HttpServlet {
 
 		out.close();
 	}
-
+	
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+//		response.setContentType("text/html");
+//		PrintWriter out = response.getWriter();
+//		String fileName = "User Guide";
+//		String filePath = "doc/Online Test Taking Web AppP1.pdf";
+//		response.setContentType("APPLICATION/PDF");
+//		response.setHeader("Content-Disposition","inline:fileName=\""+fileName+"\"");
+//		FileInputStream fi = new FileInputStream(filePath+fileName);
+//		int i ;
+//		while((i=fi.read()) != -1)
+//			out.write(i);
+//			fi.close();
+//		out.close();
+//	}
 
 }
