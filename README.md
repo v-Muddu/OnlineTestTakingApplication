@@ -36,6 +36,6 @@ o Login as admin
 • Additionally, you can choose to view bar and pie chart for visualizing the data and comprehending the class performance. 
 
 Step 3
-_• As Student, you will be able to take test, view score and feedback._ 
+_• As Student, you will be able to take test, view scores and feedback._ 
 
 • When you login to the student home page, you will see a list of available assessments, and appropriate actions implying the test. 
